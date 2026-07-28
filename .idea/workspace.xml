@@ -5,33 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23ffe579-f088-42f2-909e-03be38c9d252" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Controller/OrarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Controller/ActivityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Controller/PersoanaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Controller/PersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Controller/SystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Controller/SystemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Disciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Grupa.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Orar.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Orar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Persoana.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Professor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Sala.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/TipDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/ActivityType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/TipProfesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/ProfessorStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/TipSala.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/RoomType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Repository/RepoDisciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Repository/RepoCourse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Repository/RepoGrupa.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Repository/RepoGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Repository/RepoOrar.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Repository/RepoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Repository/RepoPersoana.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Repository/RepoPerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Repository/RepoProfesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Repository/RepoProfessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Repository/RepoSala.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Repository/RepoRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Repository/RepoStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Repository/RepoStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Service/ServiceOrar.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Service/ServiceActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Service/ServicePersoana.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Service/ServicePerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Service/ServiceStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Service/ServiceStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orar/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/Timetable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/ScheduleActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/orar/src/main/java/ro/facultate/orar/Entity/TimetableActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,18 +26,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.OrarApplication.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.OrarApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.OrarApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/adservio/Orar_Facultate"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="Application.OrarApplication">
+    <configuration name="OrarApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ro.facultate.orar.OrarApplication" />
+      <module name="orar" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ro.facultate.orar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OrarApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="orar" />
@@ -70,6 +61,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.OrarApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

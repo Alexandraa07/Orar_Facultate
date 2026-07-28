@@ -10,7 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Schedule {
+public class Timetable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
