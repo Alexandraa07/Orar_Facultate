@@ -29,4 +29,8 @@ public class TimetableController {
     public Timetable getTimetableById(@PathVariable Integer id) {
         return serviceTimetable.getTimetableById(id);
     }
+    @PutMapping("/{id}")
+    public Timetable updateTimetable(@PathVariable Integer id, @RequestBody Timetable timetable) {
+        return serviceTimetable.updateTimetable(id, timetable);
+    }
 }
