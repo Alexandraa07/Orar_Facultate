@@ -24,4 +24,17 @@ public class ServiceTimetable {
                 .orElseThrow(() -> new RuntimeException("Timetable inexistent cu id-ul: " + id));
     }
 
+
+
+    public Timetable updateTimetable(Integer id, Timetable timetableNou) {
+        Timetable timetable = repoTimetable.findById(id)
+                .orElseThrow(() -> new RuntimeException("Timetable inexistent cu id-ul: " + id));
+
+        timetable.setName(timetableNou.getName());
+        timetable.setAcademicYear(timetableNou.getAcademicYear());
+        timetable.setSemester(timetableNou.getSemester());
+
+        return repoTimetable.save(timetable);
+    }
+
 }
