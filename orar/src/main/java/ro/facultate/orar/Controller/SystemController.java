@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import ro.facultate.orar.Service.ServiceActivity;
 import ro.facultate.orar.Entity.Activity;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/system")
@@ -18,8 +19,8 @@ public class SystemController {
     private ServiceActivity serviceActivity;
 
     @GetMapping("/status")
-    public String status() {
-        return "OK";
+    public Map<String, String> status() {
+        return Map.of("status", "OK");
     }
 
     @GetMapping("/activity/group/{groupId}")
