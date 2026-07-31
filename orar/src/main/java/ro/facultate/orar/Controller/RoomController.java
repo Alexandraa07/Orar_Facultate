@@ -8,6 +8,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/room")
+@CrossOrigin(originPatterns = "http://localhost:*", allowCredentials = "true")
+
 public class RoomController {
     @Autowired
     private ServiceRoom serviceRoom;

@@ -25,5 +25,7 @@ public interface RepoActivity extends JpaRepository<Activity, Integer> {
 
     List<Activity> findByCourse_IdAndActivityType(Integer courseId, ActivityType activityType);
 
+    List<Activity> findByGroup_Id(Integer groupId);
+
     List<Activity> findByGroup_IdAndDay(Integer groupId, String day);
 }
