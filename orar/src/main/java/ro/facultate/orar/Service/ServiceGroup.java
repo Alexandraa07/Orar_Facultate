@@ -16,4 +16,6 @@ public class ServiceGroup {
     public List<Group> getAllGroups() {
         return repoGroup.findAll();
     }
+
+    public Group addGroup(Group group) { return repoGroup.save(group);}
 }

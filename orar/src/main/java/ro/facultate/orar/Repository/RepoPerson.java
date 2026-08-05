@@ -17,4 +17,6 @@ public interface RepoPerson extends JpaRepository<Person, Integer> {
     Optional<Person> findByPersonalId(String personalId);
 
     List<Person> findByFatherInitial(String fatherInitial);
+
+    Optional<Person> findByUsername(String username);
 }

@@ -1,9 +1,9 @@
 package ro.facultate.orar.Controller;
 
+import org.springframework.web.bind.annotation.*;
 import ro.facultate.orar.Entity.Activity;
 import ro.facultate.orar.Service.ServiceActivity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,12 +16,22 @@ public class ActivityController {
     private ServiceActivity serviceActivity;
 
     @GetMapping("/group/{groupId}")
-    public List<Activity> getActivityByGroup(@PathVariable Integer groupId) {
-        return serviceActivity.getActivityByGroup(groupId);
+    public String getActivityByGroup(@PathVariable Integer groupId) {
+        return "Ai cerut orarul grupei " + groupId;
+    }
+
+    @PostMapping("/add")
+    public Activity addActivity(@RequestBody Activity activity) {
+        return serviceActivity.addActivity(activity);
     }
 
     @GetMapping("/all")
     public List<Activity> getAllActivities() {
         return serviceActivity.getAllActivities();
+    }
+
+    @GetMapping("/{id}")
+    public Activity getActivityById(@PathVariable Integer id) {
+        return serviceActivity.getActivityById(id);
     }
 }

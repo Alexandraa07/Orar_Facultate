@@ -19,4 +19,9 @@ public class GroupController {
     public List<Group> getAll() {
         return serviceGroup.getAllGroups();
     }
+
+    @PostMapping("/add")
+    public Group addGroup(@RequestBody Group group) {
+        return serviceGroup.addGroup(group);
+    }
 }

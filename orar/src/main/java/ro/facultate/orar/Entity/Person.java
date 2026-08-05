@@ -27,4 +27,12 @@ public class Person {
 
     @Column(name = "father_initial")
     private String fatherInitial;
+
+    @Column(unique = true)
+    private String username;
+
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }

@@ -14,7 +14,7 @@ public class ServiceActivity {
     private RepoActivity repoActivity;
 
     public List<Activity> getActivityByGroup(Integer groupId) {
-        return repoActivity.findByGroup_Id(groupId);
+        return repoActivity.findByGroup_IdAndDay(groupId, null);
     }
 
     public List<Activity> getAllActivities() {
@@ -23,5 +23,10 @@ public class ServiceActivity {
 
     public Activity addActivity(Activity activity) {
         return repoActivity.save(activity);
+    }
+
+    public Activity getActivityById(Integer id) {
+        return repoActivity.findById(id)
+                .orElseThrow(() -> new RuntimeException("Activity inexistenta cu id-ul: " + id));
     }
 }
