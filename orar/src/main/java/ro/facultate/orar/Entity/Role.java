@@ -1,7 +1,7 @@
 package ro.facultate.orar.Entity;
 
 public enum Role {
-    ADMIN,
+    PROFESSOR,
     STUDENT,
     MANAGER
 }
