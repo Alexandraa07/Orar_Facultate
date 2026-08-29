@@ -101,3 +101,12 @@ Open a separate terminal window, navigate to the frontend directory, install dep
 * npm run dev
 
 The application UI will be available at http://localhost:5173.
+
+## Demo Credentials
+
+To test the application out-of-the-box, use the following pre-configured accounts:
+
+| Role | Username | Password |
+| :--- | :--- | :--- |
+| **Manager** | `admin` | `admin123` |
+| **Student** | `student1` | `student123` |
