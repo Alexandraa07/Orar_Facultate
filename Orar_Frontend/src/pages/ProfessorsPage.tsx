@@ -13,15 +13,16 @@ import {
     Spinner,
     Text,
     Badge,
-}
-
-    from "@chakra-ui/react";
+} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useProfessorsQuery } from "@api/requests/professor/useProfessorsQuery";
 import type { Professor } from "@api/models";
 
 export const ProfessorsPage = () => {
     const { data: professors, isLoading, isError, error } = useProfessorsQuery();
+
+    if (isLoading) return <Spinner size="xl" mt={10} ml={10} />;
+    if (isError) return <Text color="red.500" p={4}>Eroare: {(error as Error).message}</Text>;
 
     return (
         <Box p={6} bg="gray.50" minH="100vh">
@@ -45,51 +46,35 @@ export const ProfessorsPage = () => {
             </Flex>
 
             {/* TITLU */}
-            <Heading size="lg" mb={4} color="gray.800">
-                Lista Profesorilor
-            </Heading>
-
-            {isLoading && (
-                <Flex justify="center" py={10}>
-                    <Spinner size="xl" color="blue.500" />
-                </Flex>
-            )}
-
-            {isError && (
-                <Text color="red.500">
-                    Eroare: {(error as Error).message}
-                </Text>
-            )}
+            <Heading mb={6}>Lista Profesorilor</Heading>
 
             {/* TABELĂ PROFESORI */}
-            {!isLoading && professors && (
-                <Box bg="white" p={4} borderRadius="md" shadow="sm" overflowX="auto">
-                    <Table variant="simple">
-                        <Thead bg="gray.100">
-                            <Tr>
-                                <Th>ID</Th>
-                                <Th>Nume Complet</Th>
-                                <Th>Abreviere</Th>
-                                <Th>Status</Th>
-                            </Tr>
-                        </Thead>
-                        <Tbody>
-                            {professors.map((prof: Professor) => (
-                                <Tr key={prof.id}>
-                                    <Td fontWeight="bold">{prof.id}</Td>
-                                    <Td>
-                                        {prof.person.lastName} {prof.person.firstName}
-                                    </Td>
-                                    <Td>{prof.abbreviation || "—"}</Td>
-                                    <Td>
-                                        <Badge colorScheme="purple">{prof.status}</Badge>
-                                    </Td>
-                                </Tr>
-                            ))}
-                        </Tbody>
-                    </Table>
-                </Box>
-            )}
+            <Table variant="simple" colorScheme="teal">
+                <Thead>
+                    <Tr>
+                        <Th>ID</Th>
+                        <Th>Nume Complet</Th>
+                        <Th>Abreviere</Th>
+                        <Th>Status</Th>
+                    </Tr>
+                </Thead>
+                <Tbody>
+                    {professors?.map((prof: Professor) => (
+                        <Tr key={prof.id}>
+                            <Td>{prof.id}</Td>
+                            <Td>
+                                {prof.person?.lastName} {prof.person?.firstName}
+                            </Td>
+                            <Td>
+                                <Badge colorScheme="purple">
+                                    {prof.abbreviation || "—"}
+                                </Badge>
+                            </Td>
+                            <Td>{prof.status || "—"}</Td>
+                        </Tr>
+                    ))}
+                </Tbody>
+            </Table>
         </Box>
     );
 };

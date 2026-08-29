@@ -14,7 +14,7 @@ public class ServiceActivity {
     private RepoActivity repoActivity;
 
     public List<Activity> getActivityByGroup(Integer groupId) {
-        return repoActivity.findByGroup_IdAndDay(groupId, null);
+        return repoActivity.findByGroup_Id(groupId);
     }
 
     public List<Activity> getAllActivities() {

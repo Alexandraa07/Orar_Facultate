@@ -3,7 +3,9 @@ import type { Activity } from "@api/models";
 
 const getActivitiesByGroup = async (groupId: number): Promise<Activity[]> => {
   if (!groupId) return [];
-  const response = await fetch(`http://localhost:8080/activity/group/${groupId}`);
+  const response = await fetch(`http://localhost:8080/activity/group/${groupId}`, {
+    credentials: "include",
+  });
 
   if (!response.ok) {
     throw new Error("Eroare la aducerea activităților!");

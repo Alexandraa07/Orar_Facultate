@@ -6,6 +6,7 @@ const updateTimetable = async (timetable: Timetable): Promise<Timetable> => {
     `http://localhost:8080/timetable/${timetable.id}`,
     {
       method: "PUT",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },

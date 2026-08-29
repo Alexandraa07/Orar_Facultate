@@ -16,8 +16,8 @@ public class ActivityController {
     private ServiceActivity serviceActivity;
 
     @GetMapping("/group/{groupId}")
-    public String getActivityByGroup(@PathVariable Integer groupId) {
-        return "Ai cerut orarul grupei " + groupId;
+    public List<Activity> getActivityByGroup(@PathVariable Integer groupId) {
+        return serviceActivity.getActivityByGroup(groupId);
     }
 
     @PostMapping("/add")

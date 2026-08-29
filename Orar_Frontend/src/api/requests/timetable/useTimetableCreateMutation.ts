@@ -12,6 +12,7 @@ const createTimetable = async (
 ): Promise<Timetable> => {
   const response = await fetch("http://localhost:8080/timetable/add", {
     method: "POST",
+    credentials: "include",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   });

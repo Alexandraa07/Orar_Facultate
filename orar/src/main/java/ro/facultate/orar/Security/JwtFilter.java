@@ -37,9 +37,9 @@ public class JwtFilter extends OncePerRequestFilter {
                 if (jwtService.isTokenValid(token, username)) {
                     String role = jwtService.extractRole(token);
 
-                    // Spring Security așteaptă ca rolurile să aibă prefixul "ROLE_"
+                    // Verifică dacă prefixul ROLE_ există deja
                     List<SimpleGrantedAuthority> authorities = (role != null)
-                            ? List.of(new SimpleGrantedAuthority("ROLE_" + role))
+                            ? List.of(new SimpleGrantedAuthority(role.startsWith("ROLE_") ? role : "ROLE_" + role))
                             : List.of();
 
                     UsernamePasswordAuthenticationToken authToken =
