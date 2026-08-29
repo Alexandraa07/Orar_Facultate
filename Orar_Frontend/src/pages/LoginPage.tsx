@@ -1,86 +1,56 @@
+import { Box, Button, Center, Input, Heading, VStack, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function LoginPage() {
-  const navigate = useNavigate();
-
+export const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const toast = useToast();
 
-  const handleLogin = async () => {
-    setError("");
-    setLoading(true);
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-    try {
-      const response = await fetch("http://localhost:8080/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify({
-          username,
-          password,
-        }),
-      });
+    const res = await fetch("http://localhost:8080/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+      credentials: "include",
+    });
 
-      if (!response.ok) {
-        setError("Username sau parolă incorectă.");
-        return;
-      }
-
+    if (res.ok) {
       navigate("/timetables");
-    } catch {
-      setError("Nu s-a putut realiza conexiunea cu serverul.");
-    } finally {
-      setLoading(false);
+    } else {
+      toast({ title: "Username sau parolă greșită", status: "error", duration: 2000 });
     }
   };
 
   return (
-    <div className="login-page">
-      <div className="login-card">
-        <h1>Orar Facultate</h1>
-        <p>Autentifică-te pentru a continua</p>
+    <Center h="100vh" bg="gray.50">
+      <Box as="form" onSubmit={handleLogin} p={8} bg="white" rounded="lg" shadow="md" w="320px">
+        <VStack spacing={4}>
+          <Heading size="md" mb={2} color="gray.700">Autentificare</Heading>
+          
+          <Input 
+            placeholder="Username" 
+            value={username} 
+            onChange={(e) => setUsername(e.target.value)} 
+            required 
+          />
+          
+          <Input 
+            type="password" 
+            placeholder="Parolă" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)} 
+            required 
+          />
 
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-            handleLogin();
-          }}
-        >
-          <label>
-            Username
-            <input
-              type="text"
-              value={username}
-              onChange={(event) => setUsername(event.target.value)}
-              placeholder="Introdu username-ul"
-              required
-            />
-          </label>
-
-          <label>
-            Parolă
-            <input
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              placeholder="Introdu parola"
-              required
-            />
-          </label>
-
-          {error && <div className="login-error">{error}</div>}
-
-          <button type="submit" disabled={loading}>
-            {loading ? "Se autentifică..." : "Login"}
-          </button>
-        </form>
-      </div>
-    </div>
+          <Button type="submit" colorScheme="blue" w="full" mt={2}>
+            Login
+          </Button>
+        </VStack>
+      </Box>
+    </Center>
   );
-}
-
+};
