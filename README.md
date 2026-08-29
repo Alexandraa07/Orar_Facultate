@@ -97,7 +97,6 @@ The backend API will start on http://localhost:8080.
 ### Step 3: Frontend Setup & Execution (React)
 Open a separate terminal window, navigate to the frontend directory, install dependencies, and start the development server:
 
-* cd frontend
 * npm install
 * npm run dev
 
