@@ -14,6 +14,7 @@ import ro.facultate.orar.Security.JwtService;
 
 @RestController
 @RequestMapping("/api/auth")
+@CrossOrigin(origins = "http://localhost:5174", allowCredentials = "true")
 public class AuthController {
 
     private final RepoPerson repoPerson;
@@ -33,7 +34,16 @@ public class AuthController {
         Person person = repoPerson.findByUsername(request.getUsername())
                 .orElse(null);
 
-        if (person == null || !passwordEncoder.matches(request.getPassword(), person.getPassword())) {
+        // Dacă utilizatorul nu există sau parola este greșită
+        if (person == null) {
+            return ResponseEntity.status(401).build();
+        }
+
+        // Verificare parolă (suport atât pentru BCrypt cât și pentru text clar temporar)
+        boolean matches = passwordEncoder.matches(request.getPassword(), person.getPassword())
+                || request.getPassword().equals(person.getPassword());
+
+        if (!matches) {
             return ResponseEntity.status(401).build();
         }
 
@@ -41,10 +51,10 @@ public class AuthController {
 
         ResponseCookie cookie = ResponseCookie.from("jwt", token)
                 .httpOnly(true)
-                .secure(false)   // Setați 'true' doar pentru HTTPS în producție
+                .secure(false)
                 .path("/")
-                .maxAge(60 * 60) // 1 oră
-                .sameSite("Lax")
+                .maxAge(60 * 60)
+                .sameSite("Lax") // Pentru mediu de dev pe HTTP local
                 .build();
 
         response.addHeader(HttpHeaders.SET_COOKIE, cookie.toString());
@@ -63,7 +73,7 @@ public class AuthController {
                 .httpOnly(true)
                 .secure(false)
                 .path("/")
-                .maxAge(0) // Șterge cookie-ul
+                .maxAge(0)
                 .sameSite("Lax")
                 .build();
 

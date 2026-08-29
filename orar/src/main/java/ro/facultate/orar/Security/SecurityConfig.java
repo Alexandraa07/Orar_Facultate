@@ -39,7 +39,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.PUT, "/student/**", "/professor/**", "/timetable/**", "/group/**").hasRole("MANAGER")
                         .requestMatchers(HttpMethod.DELETE, "/student/**", "/professor/**", "/timetable/**", "/group/**").hasRole("MANAGER")
 
-                        // 3. Vizualizare date (orice alt GET) -> STUDENT, PROFESSOR și MANAGER
+                        // 3. Vizualizare date (orice GET) -> STUDENT, PROFESSOR și MANAGER
                         .anyRequest().hasAnyRole("STUDENT", "PROFESSOR", "MANAGER")
                 )
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
