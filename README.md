@@ -1,4 +1,4 @@
-# UNIVERSITY TIMETABLE MANAGEMENT SYSTEM
+# UNIVERSITY TIMETABLE 
 
 A full-stack web application dedicated to viewing university timetables, built with **Spring Boot** on the backend and **React (TypeScript)** on the frontend.
 
@@ -75,13 +75,13 @@ The project puts a strong emphasis on **security**, utilizing an authentication 
    CREATE DATABASE adservio;
 Configure your database connection in src/main/resources/application.properties:
 
-Properties
-spring.datasource.url=jdbc:mysql://localhost:3306/adservio?useSSL=false&serverTimezone=UTC
-spring.datasource.username=root
-spring.datasource.password=your_db_password
+**Properties**
+ * spring.datasource.url=jdbc:mysql://localhost:3306/adservio?useSSL=false&serverTimezone=UTC
+ * spring.datasource.username=root
+ * spring.datasource.password=your_db_password
 
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
+ * spring.jpa.hibernate.ddl-auto=update
+ * spring.jpa.show-sql=true
 
 ### Step 2: Build & Run the Backend (Spring Boot)
 Open a terminal in the root directory of the project and run:
@@ -89,7 +89,7 @@ Open a terminal in the root directory of the project and run:
 Windows (CMD / PowerShell):
 .\mvnw.cmd spring-boot:run
 
-Linux / macOS (Bash)
+Linux / macOS (Bash): 
 ./mvnw spring-boot:run
 
 The backend API will start on http://localhost:8080.
@@ -97,8 +97,8 @@ The backend API will start on http://localhost:8080.
 ### Step 3: Frontend Setup & Execution (React)
 Open a separate terminal window, navigate to the frontend directory, install dependencies, and start the development server:
 
-cd frontend
-npm install
-npm run dev
+* cd frontend
+* npm install
+* npm run dev
 
 The application UI will be available at http://localhost:5173.
